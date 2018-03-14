@@ -1,2 +1,2 @@
 # learningkotlin
-Playing around with kotlin 
+Playing around with kotlin its syntax and it's offering
