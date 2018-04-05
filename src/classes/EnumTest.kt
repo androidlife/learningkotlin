@@ -15,7 +15,8 @@ enum class Priority(var position: Int) {
     }
 }
 
-//here we can created 
+//here we can created an abstract function
+//so object of that enum has to implement it
 enum class OtherEnum(var type:String){
     Good("Very good"){
         override fun getItsType(): String {
