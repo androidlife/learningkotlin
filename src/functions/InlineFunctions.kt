@@ -34,7 +34,7 @@ inline fun workingWithNoInline(noinline fn: () -> Unit, fn1: () -> Unit) {
 //this can't be done
 // whY?
 inline fun workingWithReference(fn: () -> Unit) {
-    val someFn = fn
+    //val someFn = fn
     println("Do something")
     fn()
 }

@@ -12,6 +12,11 @@ enum class Priority(var position: Int) {
         override fun toString(): String {
             return "THIS IS SLOW"
         }
+    };
+    companion object {
+        fun doSomethin(){
+
+        }
     }
 }
 
@@ -40,4 +45,5 @@ fun main(args: Array<String>) {
     println(Priority.Slow.name)
     //if we simply print the enum, the toString() would be printed
     println(Priority.Slow)
+    
 }
