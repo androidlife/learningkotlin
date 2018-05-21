@@ -18,14 +18,20 @@ fun SomeFunWithExtension.firstExtension(otherName: String) {
 
 }
 
-fun SomeFunWithExtension.otherExtension(otherInt: Int) {
+fun SomeFunWithExtension.secondExtension(otherInt: Int) {
+    println(name)
     println("OtherExtension() $otherInt")
+}
+
+fun SomeFunWithExtension.thirdExtension(thirdName: Int): Int {
+    printName()
+    return thirdName
 }
 
 fun main(args: Array<String>) {
     val someFunWithExtension = SomeFunWithExtension()
     someFunWithExtension.firstExtension("This is another name")
-    someFunWithExtension.otherExtension(20)
+    someFunWithExtension.secondExtension(20)
 }
 
 
