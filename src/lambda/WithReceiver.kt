@@ -31,18 +31,20 @@ class Recurring {
     }
 }
 
-class Bpay(val adHoc: AdHoc, val recurring: Recurring) {
+
+open class Pay(val adHoc: AdHoc, val recurring: Recurring) {
     var enabled = true
-    operator fun invoke(fn: Bpay.() -> Unit): Bpay {
+    fun isAdHocEnabled() = adHoc.enabled
+    fun isRecurringEnabled() = recurring.enabled
+    operator fun invoke(fn: Pay.() -> Unit): Pay {
         fn()
         return this
     }
 }
 
-class PayMyCard(val adHoc: AdHoc, val recurring: Recurring) {
-    var enabled = true
-    operator fun invoke(fn: PayMyCard.() -> Unit) {}
-}
+class Bpay(adHoc: AdHoc, recurring: Recurring) : Pay(adHoc, recurring)
+class PayMyCard(adHoc: AdHoc, recurring: Recurring) : Pay(adHoc, recurring)
+
 
 class PaymentConfig(val bpay: Bpay, val payMyCard: PayMyCard) {
     var enabled = true
@@ -64,7 +66,7 @@ fun createPaymentConfig(fn: PaymentConfig.() -> Unit): PaymentConfig {
 
 fun main(args: Array<String>) {
     createPaymentConfig {
-        enabled =false
+        enabled = false
         bpay {
             adHoc {
                 enabled = false

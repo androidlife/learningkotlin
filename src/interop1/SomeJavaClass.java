@@ -1,4 +1,4 @@
-package interop;
+package interop1;
 
 public class SomeJavaClass {
     public static void main(String... args) {

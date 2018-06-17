@@ -1,6 +1,6 @@
 package interop;
 
-public class CustomerJava implements Cloneable {
+public class CustomerJava {
     public String customerName;
 
     public CustomerJava(String customerName) {
@@ -13,12 +13,7 @@ public class CustomerJava implements Cloneable {
 
     public static void main(String... args) {
         System.out.println("CUSTOMERJAVA");
-        CustomerJava customerJava = new CustomerJava("CUSTOMER");
-        //CustomerJava customerJava1 = customerJava.clone();
     }
 
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
-    }
+
 }

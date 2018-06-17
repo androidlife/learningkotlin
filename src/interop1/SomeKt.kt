@@ -1,4 +1,4 @@
-package interop
+package interop1
 
 class SomeKt(var id: Int) {
     //in order to make a field access to Java
@@ -18,8 +18,8 @@ enum class KtType {
 }
 
 fun main(args: Array<String>) {
-    var ktType:KtType = KtType.Sweet
+    var ktType: KtType = KtType.Sweet
     println(ktType.name)
-    var ktType1:KtType = KtType.valueOf(ktType.name)
+    var ktType1: KtType = KtType.valueOf(ktType.name)
     println(ktType1.name)
 }
