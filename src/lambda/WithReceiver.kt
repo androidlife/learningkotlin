@@ -48,6 +48,8 @@ class PayMyCard(adHoc: AdHoc, recurring: Recurring) : Pay(adHoc, recurring)
 
 class PaymentConfig(val bpay: Bpay, val payMyCard: PayMyCard) {
     var enabled = true
+    fun isBpayEnabled() = bpay.enabled
+    fun isPayMyCardEnabled() = payMyCard.enabled
     operator fun invoke(fn: PaymentConfig.() -> Unit): PaymentConfig {
         fn()
         return this
@@ -68,6 +70,7 @@ fun main(args: Array<String>) {
     createPaymentConfig {
         enabled = false
         bpay {
+            enabled = true
             adHoc {
                 enabled = false
             }
@@ -76,6 +79,7 @@ fun main(args: Array<String>) {
             }
         }
         payMyCard {
+            enabled = true
             adHoc {
                 enabled = true
             }
